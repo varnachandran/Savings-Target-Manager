@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SavingsTarget.Models.UserSavingsAccount>
+
+@{
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br/>
+<p>
+    @Html.ActionLink("Deposit to Savings Account", "Deposit")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deposit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deposit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+
+    </tr>
+}
+
+</table>
